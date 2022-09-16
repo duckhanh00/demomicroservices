@@ -1,0 +1,1 @@
+SELECT * FROM fraud_check_history
