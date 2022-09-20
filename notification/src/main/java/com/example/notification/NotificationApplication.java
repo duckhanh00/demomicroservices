@@ -1,22 +1,21 @@
-package com.example.customer;
+package com.example.notification;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
 
-@SpringBootApplication
-@EnableFeignClients(
-        basePackages = "com.example.clients"
+@SpringBootApplication(
+        scanBasePackages = {
+                "com.example.notification",
+                "com.example.amqp",
+        }
 )
-@EnableEurekaClient
 @PropertySources({
         @PropertySource("classpath:clients-default.properties")
 })
-public class CustomerApplication {
+public class NotificationApplication {
     public static void main(String[] args) {
-        SpringApplication.run(CustomerApplication.class, args);
+        SpringApplication.run(NotificationApplication.class, args);
     }
 }

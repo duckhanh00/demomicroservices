@@ -13,6 +13,8 @@
     <module>clients</module>
     <module>fraud</module>
     <module>eureka-server</module>
+      <module>amqp</module>
+      <module>notification</module>
   </modules>
 
   <name>demomicroservices</name>
